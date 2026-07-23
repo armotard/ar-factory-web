@@ -73,8 +73,8 @@ const productos = [
       "Organiza tus cables del freno delantero de la mejor manera, amplia personalización del color. ",
 
     detalles: [
-      "Diseño ligero",
-      "Alta resistencia",
+      "Diseño compacto y elegante"
+      "Alta resistencia frente a golpes",
       "Diseñado para Supermoto"
     ],
 
