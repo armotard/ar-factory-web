@@ -25,7 +25,6 @@ const contenedor =
 
 
 // Mostrar la información del producto
-
 if (producto) {
 
   contenedor.innerHTML = `
@@ -33,15 +32,31 @@ if (producto) {
     <div class="product-detail-image">
 
       <img
-        src="${producto.imagen}"
+        id="imagen-principal"
+        src="${producto.imagenes[0]}"
         alt="${producto.nombre}"
       >
+
+
+      <div class="product-thumbnails">
+
+        ${producto.imagenes.map((imagen, indice) => `
+
+          <img
+            src="${imagen}"
+            alt="${producto.nombre} - imagen ${indice + 1}"
+            class="thumbnail ${indice === 0 ? "active" : ""}"
+            onclick="cambiarImagen('${imagen}', this)"
+          >
+
+        `).join("")}
+
+      </div>
 
     </div>
 
 
     <div class="product-detail-info">
-
 
       <p class="product-category">
 
@@ -85,22 +100,40 @@ if (producto) {
 
 
       <a
-
         href="${producto.enlaceCompra}"
-
         target="_blank"
-
-        class="button button-primary"
-
-      >
+        class="button button-primary">
 
         COMPRAR
 
       </a>
 
-
     </div>
 
   `;
+
+}
+function cambiarImagen(rutaImagen, miniatura) {
+
+  const imagenPrincipal =
+    document.getElementById("imagen-principal");
+
+
+  imagenPrincipal.src =
+    rutaImagen;
+
+
+  const miniaturas =
+    document.querySelectorAll(".thumbnail");
+
+
+  miniaturas.forEach(imagen => {
+
+    imagen.classList.remove("active");
+
+  });
+
+
+  miniatura.classList.add("active");
 
 }
