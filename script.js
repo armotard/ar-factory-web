@@ -19,7 +19,7 @@ productos.forEach(producto => {
   tarjeta.innerHTML = `
     <div class="product-image">
       <img 
-        src="${producto.imagen}"
+      src="${producto.imagenes[0]}"
         alt="${producto.nombre}"
       >
     </div>
