@@ -6,8 +6,11 @@ const productos = [
     nombre: "AR BRAKE DUCT",
 
     precio: 39.99,
-
-    imagen: "images/ar-brake-duct.png",
+    imagenes: [
+  "images/ar-brake-duct.png",
+  "images/ar-brake-duct-2.png",
+  "images/ar-brake-duct-3.png"
+],
 
     categoria: "AR FACTORY · BRAKE PERFORMANCE",
 
