@@ -649,3 +649,52 @@ h2 {
 
   border-color: #ffffff;
 }
+.catalog-section {
+  padding: 140px 8% 100px;
+
+  min-height: 100vh;
+}
+
+
+.category-filters {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin: 50px 0;
+}
+
+
+.category-button {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: inherit;
+
+  padding: 12px 22px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+
+.category-button:hover,
+.category-button.active {
+  background: #ffffff;
+
+  color: #000000;
+}
