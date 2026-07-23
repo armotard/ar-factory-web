@@ -77,11 +77,13 @@ const productos = [
       "Alta resistencia frente a golpes",
       "Diseñado para Supermoto"
     ],
+    
   especificaciones: {
     material: "PLA",
     peso: "35 g",
     fabricacion: "Impresión 3D",
     compatibilidad: "Universal"
+    
   },
     enlaceCompra:
       "https://es.wallapop.com/item/neumatico-enduro-987073657"
