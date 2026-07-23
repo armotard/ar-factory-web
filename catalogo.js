@@ -6,6 +6,8 @@ const contenedorFiltros =
   document.getElementById("filtros-categorias");
 
 
+// FUNCIÓN PARA MOSTRAR PRODUCTOS
+
 function mostrarProductos(categoria = "todos") {
 
   contenedorProductos.innerHTML = "";
@@ -17,18 +19,20 @@ function mostrarProductos(categoria = "todos") {
       ? productos
 
       : productos.filter(
-          producto => producto.categoria === categoria
+          producto =>
+            producto.categoria === categoria
         );
 
 
   productosFiltrados.forEach(producto => {
 
-
     const tarjeta =
       document.createElement("article");
 
 
-    tarjeta.classList.add("product-card");
+    tarjeta.classList.add(
+      "product-card"
+    );
 
 
     tarjeta.innerHTML = `
@@ -36,18 +40,14 @@ function mostrarProductos(categoria = "todos") {
       <div class="product-image">
 
         <img
-
           src="${producto.imagenes[0]}"
-
           alt="${producto.nombre}"
-
         >
 
       </div>
 
 
       <div class="product-info">
-
 
         <p class="product-category">
 
@@ -78,83 +78,138 @@ function mostrarProductos(categoria = "todos") {
 
 
         <a
-
           href="producto.html?id=${producto.id}"
-
           class="button button-primary"
-
         >
 
           VER PRODUCTO
 
         </a>
 
-
       </div>
 
     `;
 
 
-    contenedorProductos.appendChild(tarjeta);
+    contenedorProductos.appendChild(
+      tarjeta
+    );
 
   });
 
 }
-const categorias =
-  [...new Set(
-    productos.map(
-      producto => producto.categoria
-    )
-  )];
-categorias.forEach(categoria => {
 
-  const producto =
-    productos.find(
-      producto => producto.categoria === categoria
+
+// BOTÓN TODOS
+
+const botonTodos =
+  document.querySelector(
+    '[data-categoria="todos"]'
+  );
+
+
+botonTodos.addEventListener(
+  "click",
+  () => {
+
+    document
+      .querySelectorAll(
+        ".category-button"
+      )
+      .forEach(
+        boton =>
+          boton.classList.remove("active")
+      );
+
+
+    botonTodos.classList.add("active");
+
+
+    mostrarProductos("todos");
+
+  }
+);
+
+
+// CREAR CATEGORÍAS
+
+const categorias =
+  [
+    ...new Set(
+      productos.map(
+        producto =>
+          producto.categoria
+      )
+    )
+  ];
+
+
+categorias.forEach(
+  categoria => {
+
+    const producto =
+      productos.find(
+        producto =>
+          producto.categoria === categoria
+      );
+
+
+    const boton =
+      document.createElement(
+        "button"
+      );
+
+
+    boton.classList.add(
+      "category-button"
     );
 
 
-  const boton =
-    document.createElement("button");
+    boton.dataset.categoria =
+      categoria;
 
 
-  boton.classList.add(
-    "category-button"
-  );
+    boton.textContent =
+      producto.categoriaNombre;
 
 
-  boton.dataset.categoria =
-    categoria;
+    boton.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(
+            ".category-button"
+          )
+          .forEach(
+            boton =>
+              boton.classList.remove(
+                "active"
+              )
+          );
 
 
-  boton.textContent =
-    producto.categoriaNombre;
-
-
-  boton.addEventListener(
-    "click",
-    () => {
-
-      document
-        .querySelectorAll(
-          ".category-button"
-        )
-        .forEach(
-          boton =>
-            boton.classList.remove("active")
+        boton.classList.add(
+          "active"
         );
 
 
-      boton.classList.add("active");
+        mostrarProductos(
+          categoria
+        );
+
+      }
+    );
 
 
-      mostrarProductos(categoria);
+    contenedorFiltros.appendChild(
+      boton
+    );
 
-    }
-  );
+  }
+);
 
 
-  contenedorFiltros.appendChild(boton);
+// MOSTRAR TODOS AL CARGAR
 
-});
 mostrarProductos();
