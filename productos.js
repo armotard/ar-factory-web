@@ -1,6 +1,6 @@
 const productos = [
   {
-    id: 1,
+    id: 1
     nombre: "AR BRAKE DUCT",
     precio: 39.99,
     imagen: "images/ar-brake-duct.png",
@@ -10,11 +10,11 @@ const productos = [
       "Compatible con cualquier moto",
       "Diseño compacto",
       "Diseñado para Supermoto"
-    ],
+    ]
     enlaceCompra: "https://..."
-  },
+  }
   {
-    id: 2,
+    id: 2
     nombre: "AR LEVER GUARD",
     precio: 49.99,
     imagen: "images/ar-lever-guard.png",
