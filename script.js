@@ -25,7 +25,7 @@ productos.forEach(producto => {
     </div>
     <div class="product-info">
       <p class="product-category">
-        ${producto.categoria}
+        ${producto.categoriaNombre}
       </p>
       <h3>
         ${producto.nombre}
