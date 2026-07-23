@@ -20,7 +20,7 @@ const productos = [
       "Diseñado para Supermoto"
     ],
 
-    enlaceCompra: "#"
+    enlaceCompra: "https://es.wallapop.com/item/llavero-giratorio-con-rodamiento-antiestres-1257879271"
 
   },
 
@@ -45,7 +45,7 @@ const productos = [
       "Diseñado para Supermoto"
     ],
 
-    enlaceCompra: "#"
+    enlaceCompra: "https://es.wallapop.com/item/neumatico-enduro-987073657"
 
   }
 
