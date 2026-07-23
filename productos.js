@@ -36,7 +36,7 @@ const productos = [
     {
     id: 3,
     nombre: "Organizador cables",
-    precio: 7,99,
+    precio: 7.99,
     imagen: "images/Organizador-de-cables.png",
     categoria: "AR FACTORY · PROTECTION",
     descripcion:
