@@ -70,7 +70,7 @@ const productos = [
     categoria: "AR FACTORY · PROTECTION",
 
     descripcion:
-      "Organiza tus cables de la mejor manera.",
+      "Organiza tus cables del freno delantero de la mejor manera, amplia personalización del color. ",
 
     detalles: [
       "Diseño ligero",
