@@ -589,3 +589,63 @@ h2 {
 
   margin-bottom: 30px;
 }
+.product-detail-image {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+#imagen-principal {
+  width: 100%;
+
+  max-width: 550px;
+
+  height: 500px;
+
+  object-fit: contain;
+}
+
+
+.product-thumbnails {
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+
+.thumbnail {
+  width: 80px;
+
+  height: 80px;
+
+  object-fit: cover;
+
+  cursor: pointer;
+
+  opacity: 0.5;
+
+  border: 2px solid transparent;
+
+  transition: 0.2s;
+}
+
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+
+.thumbnail.active {
+  opacity: 1;
+
+  border-color: #ffffff;
+}
