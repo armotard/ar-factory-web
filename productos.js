@@ -11,9 +11,8 @@ const productos = [
       "images/ar-brake-duct.png"
     ],
 
-    categoria: "AR FACTORY · BRAKE PERFORMANCE",
-
-     categoriaNombre: "BRAKE PERFORMANCE",
+categoria: "brake-performance",
+categoriaNombre: "BRAKE PERFORMANCE",
 
     descripcion:
       "Conducto de refrigeración para la pinza de freno trasera, diseñado para mejorar el flujo de aire y ayudar a reducir la acumulación de temperatura durante un uso intensivo.",
@@ -41,9 +40,8 @@ const productos = [
       "images/ar-brake-duct.png"
     ],
 
-    categoria: "protection",
-
-    categoriaNombre: "PROTECTION",
+categoria: "protection",
+categoriaNombre: "PROTECTION",
 
     descripcion:
       "Protector de maneta diseñado para conducción deportiva.",
@@ -71,9 +69,8 @@ const productos = [
       "images/Organizador-de-cables.png"
     ],
 
-  categoria: "accessories",
-
-  categoriaNombre: "ACCESSORIES",
+categoria: "accessories",
+categoriaNombre: "ACCESSORIES",
 
     descripcion:
       "Organiza tus cables del freno delantero de la mejor manera, amplia personalización del color. ",
