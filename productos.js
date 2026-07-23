@@ -37,7 +37,7 @@ const productos = [
     id: 3,
     nombre: "Organizador cables",
     precio: 7,99,
-    imagen: "images/ar-brake-duct.png",
+    imagen: "images/Organizador-de-cables.png",
     categoria: "AR FACTORY · PROTECTION",
     descripcion:
       "Organiza tus cables de la mejor manera",
