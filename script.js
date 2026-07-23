@@ -40,13 +40,27 @@ productos.forEach(producto => {
           </span>
         `).join("")}
       </div>
-      <a
-        href="${producto.enlaceCompra}"
-        target="_blank"
-        class="button button-primary"
-      >
-        COMPRAR
-      </a>
+<div class="product-buttons">
+
+  <a
+    href="producto.html?id=${producto.id}"
+    class="button button-primary">
+
+    VER PRODUCTO
+
+  </a>
+
+
+  <a
+    href="${producto.enlaceCompra}"
+    target="_blank"
+    class="button button-secondary">
+
+    COMPRAR
+
+  </a>
+
+</div>
     </div>
   `;
   contenedorProductos.appendChild(tarjeta);
