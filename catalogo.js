@@ -27,6 +27,15 @@ const textoBuscado =
 
 
 const productosFiltrados =
+  if(productosFiltrados.length===0){
+
+    mensajeSinResultados.style.display="block";
+
+}else{
+
+    mensajeSinResultados.style.display="none";
+
+}
     productos.filter(producto => {
 
         const coincideCategoria =
