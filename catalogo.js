@@ -67,7 +67,17 @@ const coincideBusqueda =
         return coincideCategoria && coincideBusqueda;
 
     });
-  productosFiltrados.forEach(producto => {
+  productosFiltrados.const productosAMostrar =
+
+productosFiltrados.length>0
+
+?
+
+productosFiltrados
+
+:
+
+productos.slice(0,3);(producto => {
 
     const tarjeta =
       document.createElement("article");
