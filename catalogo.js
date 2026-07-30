@@ -1,6 +1,8 @@
 const buscador =
 document.getElementById("buscador-productos");
 
+let categoriaActual = "todos";
+
 const contenedorProductos =
   document.getElementById("catalogo-productos");
 
