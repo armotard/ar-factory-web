@@ -1,3 +1,6 @@
+const buscador =
+document.getElementById("buscador-productos");
+
 const contenedorProductos =
   document.getElementById("catalogo-productos");
 
