@@ -13,22 +13,34 @@ const contenedorFiltros =
 
 // FUNCIÓN PARA MOSTRAR PRODUCTOS
 
-function mostrarProductos(categoria = "todos") {
+function mostrarProductos() {
 
   contenedorProductos.innerHTML = "";
+  
+const textoBuscado =
+    buscador.value
+        .toLowerCase()
+        .trim();
 
 
-  const productosFiltrados =
-    categoria === "todos"
+const productosFiltrados =
+    productos.filter(producto => {
 
-      ? productos
+        const coincideCategoria =
+            categoriaActual === "todos" ||
 
-      : productos.filter(
-          producto =>
-            producto.categoria === categoria
-        );
+            producto.categoria === categoriaActual;
 
 
+        const coincideBusqueda =
+            producto.nombre
+                .toLowerCase()
+                .includes(textoBuscado);
+
+
+        return coincideCategoria && coincideBusqueda;
+
+    });
   productosFiltrados.forEach(producto => {
 
     const tarjeta =
@@ -130,7 +142,9 @@ botonTodos.addEventListener(
     botonTodos.classList.add("active");
 
 
-    mostrarProductos("todos");
+ categoriaActual = "todos";
+
+mostrarProductos();
 
   }
 );
@@ -199,9 +213,9 @@ categorias.forEach(
         );
 
 
-        mostrarProductos(
-          categoria
-        );
+      categoriaActual = categoria;
+
+mostrarProductos();
 
       }
     );
