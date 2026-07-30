@@ -699,27 +699,31 @@ h2 {
   color: #000000;
 }
 
-/*=========================
-    BUSCADOR
-=========================*/
+/*==================================================
+                    BUSCADOR
+==================================================*/
 
 .search-container{
 
+    width:100%;
+
     display:flex;
+
     justify-content:center;
 
-    margin:40px auto;
+    align-items:center;
 
-    width:100%;
+    margin:50px auto 25px;
 
 }
 
 #buscador-productos{
 
     width:100%;
-    max-width:550px;
 
-    padding:16px 22px;
+    max-width:650px;
+
+    padding:18px 22px;
 
     background:#181818;
 
@@ -729,26 +733,98 @@ h2 {
 
     color:white;
 
+    font-family:inherit;
+
     font-size:16px;
 
     transition:.3s;
+
 }
+
 #buscador-productos:focus{
+
     outline:none;
-    border-color:#8b3dff;
+
+    border-color:#7527c7;
+
 }
+
 #buscador-productos::placeholder{
-    color:#9a9a9a;
+
+    color:#8f8f8f;
+
 }
+
+
+/*==================================================
+              MENSAJE SIN RESULTADOS
+==================================================*/
+
 .no-results{
+
     display:none;
+
+    width:100%;
+
     text-align:center;
-    margin:50px auto;
+
+    margin:0 auto 45px;
+
+    animation:fadeIn .35s ease;
+
 }
+
 .no-results h2{
-    margin-bottom:10px;
-    font-size:28px;
+
+    font-family:'Barlow Condensed', sans-serif;
+
+    font-size:42px;
+
+    font-weight:900;
+
+    line-height:.95;
+
+    margin-bottom:12px;
+
+    color:#ffffff;
+
 }
+
 .no-results p{
-    opacity:.7;
+
+    color:#a2a2a8;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    max-width:650px;
+
+    margin:0 auto;
+
+}
+
+
+/*==================================================
+                  ANIMACIÓN
+==================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
 }
