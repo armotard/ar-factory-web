@@ -32,10 +32,24 @@ const productosFiltrados =
             producto.categoria === categoriaActual;
 
 
-        const coincideBusqueda =
-            producto.nombre
-                .toLowerCase()
-                .includes(textoBuscado);
+const textoProducto = `
+
+${producto.nombre || ""}
+
+${producto.descripcion || ""}
+
+${producto.categoriaNombre || ""}
+
+${producto.especificaciones?.material || ""}
+
+${producto.compatibilidad?.join(" ") || ""}
+
+`
+.toLowerCase();
+
+
+const coincideBusqueda =
+    textoProducto.includes(textoBuscado);
 
 
         return coincideCategoria && coincideBusqueda;
