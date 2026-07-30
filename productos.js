@@ -17,6 +17,13 @@ categoriaNombre: "BRAKE PERFORMANCE",
     descripcion:
       "Conducto de refrigeración para la pinza de freno trasera, diseñado para mejorar el flujo de aire y ayudar a reducir la acumulación de temperatura durante un uso intensivo.",
 
+    compatibilidad: [
+    "Universal",
+    "YZF 450",
+    "KTM 450",
+    "Husqvarna 450"
+],
+
     detalles: [
       "Compatible con cualquier moto",
       "Diseño compacto",
@@ -46,6 +53,13 @@ categoriaNombre: "PROTECTION",
     descripcion:
       "Protector de maneta diseñado para conducción deportiva.",
 
+    compatibilidad: [
+    "Universal",
+    "YZF 450",
+    "KTM 450",
+    "Husqvarna 450"
+],
+
     detalles: [
       "Diseño ligero",
       "Alta resistencia",
@@ -74,6 +88,13 @@ categoriaNombre: "ACCESSORIES",
 
     descripcion:
       "Organiza tus cables del freno delantero de la mejor manera, amplia personalización del color. ",
+
+    compatibilidad: [
+    "Universal",
+    "YZF 450",
+    "KTM 450",
+    "Husqvarna 450"
+],
 
     detalles: [
       "Diseño compacto y elegante",
