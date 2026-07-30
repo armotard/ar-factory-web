@@ -1,6 +1,9 @@
 const buscador =
 document.getElementById("buscador-productos");
 
+const mensajeSinResultados =
+document.getElementById("sin-resultados");
+
 let categoriaActual = "todos";
 
 const contenedorProductos =
