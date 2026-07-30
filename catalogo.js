@@ -213,3 +213,12 @@ categorias.forEach(
 // MOSTRAR TODOS AL CARGAR
 
 mostrarProductos();
+
+buscador.addEventListener(
+  "input",
+  () => {
+
+    mostrarProductos();
+
+  }
+);
