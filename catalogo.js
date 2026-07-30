@@ -1,279 +1,221 @@
-const buscador =
-document.getElementById("buscador-productos");
-
-const mensajeSinResultados =
-document.getElementById("sin-resultados");
+const buscador = document.getElementById("buscador-productos");
+const mensajeSinResultados = document.getElementById("sin-resultados");
 
 let categoriaActual = "todos";
 
-const contenedorProductos =
-  document.getElementById("catalogo-productos");
+const contenedorProductos = document.getElementById("catalogo-productos");
+const contenedorFiltros = document.getElementById("filtros-categorias");
 
 
-const contenedorFiltros =
-  document.getElementById("filtros-categorias");
-
-
-// FUNCIÓN PARA MOSTRAR PRODUCTOS
+// ===========================
+// MOSTRAR PRODUCTOS
+// ===========================
 
 function mostrarProductos() {
 
-  contenedorProductos.innerHTML = "";
-  
-const textoBuscado =
-    buscador.value
+    contenedorProductos.innerHTML = "";
+
+    const textoBuscado = buscador.value
         .toLowerCase()
         .trim();
 
+    const productosFiltrados = productos.filter(producto => {
 
-const productosFiltrados =
-  if(productosFiltrados.length===0){
-
-    mensajeSinResultados.style.display="block";
-
-}else{
-
-    mensajeSinResultados.style.display="none";
-
-}
-    productos.filter(producto => {
+        // FILTRO POR CATEGORÍA
 
         const coincideCategoria =
             categoriaActual === "todos" ||
-
             producto.categoria === categoriaActual;
 
+        // TEXTO EN EL QUE SE BUSCARÁ
 
-const textoProducto = `
+        const textoProducto = `
+            ${producto.nombre || ""}
+            ${producto.descripcion || ""}
+            ${producto.categoriaNombre || ""}
+            ${producto.especificaciones?.material || ""}
+            ${producto.compatibilidad?.join(" ") || ""}
+        `.toLowerCase();
 
-${producto.nombre || ""}
-
-${producto.descripcion || ""}
-
-${producto.categoriaNombre || ""}
-
-${producto.especificaciones?.material || ""}
-
-${producto.compatibilidad?.join(" ") || ""}
-
-`
-.toLowerCase();
-
-
-const coincideBusqueda =
-    textoProducto.includes(textoBuscado);
-
+        const coincideBusqueda =
+            textoProducto.includes(textoBuscado);
 
         return coincideCategoria && coincideBusqueda;
 
     });
-  productosFiltrados.const productosAMostrar =
-
-productosFiltrados.length>0
-
-?
-
-productosFiltrados
-
-:
-
-productos.slice(0,3);(producto => {
-
-    const tarjeta =
-      document.createElement("article");
 
 
-    tarjeta.classList.add(
-      "product-card"
-    );
+    // MENSAJE SI NO HAY RESULTADOS
+
+    if (productosFiltrados.length === 0 && textoBuscado !== "") {
+
+        mensajeSinResultados.style.display = "block";
+
+    } else {
+
+        mensajeSinResultados.style.display = "none";
+
+    }
 
 
-    tarjeta.innerHTML = `
+    // SI NO HAY RESULTADOS, MOSTRAR RECOMENDADOS
 
-      <div class="product-image">
-
-        <img
-          src="${producto.imagenes[0]}"
-          alt="${producto.nombre}"
-        >
-
-      </div>
+    const productosAMostrar =
+        productosFiltrados.length > 0
+            ? productosFiltrados
+            : productos.slice(0, 3);
 
 
-      <div class="product-info">
+    productosAMostrar.forEach(producto => {
 
-        <p class="product-category">
+        const tarjeta = document.createElement("article");
 
-          ${producto.categoriaNombre}
+        tarjeta.classList.add("product-card");
 
-        </p>
+        tarjeta.innerHTML = `
 
+            <div class="product-image">
 
-        <h3>
+                <img
+                    src="${producto.imagenes[0]}"
+                    alt="${producto.nombre}"
+                >
 
-          ${producto.nombre}
+            </div>
 
-        </h3>
+            <div class="product-info">
 
+                <p class="product-category">
 
-        <p>
+                    ${producto.categoriaNombre}
 
-          ${producto.descripcion}
+                </p>
 
-        </p>
+                <h3>
 
+                    ${producto.nombre}
 
-        <p class="product-price">
+                </h3>
 
-          ${producto.precio.toFixed(2)} €
+                <p>
 
-        </p>
+                    ${producto.descripcion}
 
+                </p>
 
-        <a
-          href="producto.html?id=${producto.id}"
-          class="button button-primary"
-        >
+                <p class="product-price">
 
-          VER PRODUCTO
+                    ${producto.precio.toFixed(2)} €
 
-        </a>
+                </p>
 
-      </div>
+                <a
+                    href="producto.html?id=${producto.id}"
+                    class="button button-primary"
+                >
 
-    `;
+                    VER PRODUCTO
 
+                </a>
 
-    contenedorProductos.appendChild(
-      tarjeta
-    );
+            </div>
 
-  });
+        `;
+
+        contenedorProductos.appendChild(tarjeta);
+
+    });
 
 }
 
 
+// ===========================
 // BOTÓN TODOS
+// ===========================
 
 const botonTodos =
-  document.querySelector(
-    '[data-categoria="todos"]'
-  );
+document.querySelector('[data-categoria="todos"]');
 
-
-botonTodos.addEventListener(
-  "click",
-  () => {
+botonTodos.addEventListener("click", () => {
 
     document
-      .querySelectorAll(
-        ".category-button"
-      )
-      .forEach(
-        boton =>
-          boton.classList.remove("active")
-      );
-
+        .querySelectorAll(".category-button")
+        .forEach(boton =>
+            boton.classList.remove("active")
+        );
 
     botonTodos.classList.add("active");
 
-
- categoriaActual = "todos";
-
-mostrarProductos();
-
-  }
-);
-
-
-// CREAR CATEGORÍAS
-
-const categorias =
-  [
-    ...new Set(
-      productos.map(
-        producto =>
-          producto.categoria
-      )
-    )
-  ];
-
-
-categorias.forEach(
-  categoria => {
-
-    const producto =
-      productos.find(
-        producto =>
-          producto.categoria === categoria
-      );
-
-
-    const boton =
-      document.createElement(
-        "button"
-      );
-
-
-    boton.classList.add(
-      "category-button"
-    );
-
-
-    boton.dataset.categoria =
-      categoria;
-
-
-    boton.textContent =
-      producto.categoriaNombre;
-
-
-    boton.addEventListener(
-      "click",
-      () => {
-
-        document
-          .querySelectorAll(
-            ".category-button"
-          )
-          .forEach(
-            boton =>
-              boton.classList.remove(
-                "active"
-              )
-          );
-
-
-        boton.classList.add(
-          "active"
-        );
-
-
-      categoriaActual = categoria;
-
-mostrarProductos();
-
-      }
-    );
-
-
-    contenedorFiltros.appendChild(
-      boton
-    );
-
-  }
-);
-
-
-// MOSTRAR TODOS AL CARGAR
-
-mostrarProductos();
-
-buscador.addEventListener(
-  "input",
-  () => {
+    categoriaActual = "todos";
 
     mostrarProductos();
 
-  }
-);
+});
+
+
+// ===========================
+// CREAR BOTONES DE CATEGORÍA
+// ===========================
+
+const categorias = [
+
+    ...new Set(
+        productos.map(
+            producto => producto.categoria
+        )
+    )
+
+];
+
+
+categorias.forEach(categoria => {
+
+    const producto = productos.find(
+        producto => producto.categoria === categoria
+    );
+
+    const boton = document.createElement("button");
+
+    boton.classList.add("category-button");
+
+    boton.dataset.categoria = categoria;
+
+    boton.textContent = producto.categoriaNombre;
+
+    boton.addEventListener("click", () => {
+
+        document
+            .querySelectorAll(".category-button")
+            .forEach(boton =>
+                boton.classList.remove("active")
+            );
+
+        boton.classList.add("active");
+
+        categoriaActual = categoria;
+
+        mostrarProductos();
+
+    });
+
+    contenedorFiltros.appendChild(boton);
+
+});
+
+
+// ===========================
+// BUSCADOR
+// ===========================
+
+buscador.addEventListener("input", () => {
+
+    mostrarProductos();
+
+});
+
+
+// ===========================
+// CARGA INICIAL
+// ===========================
+
+mostrarProductos();
