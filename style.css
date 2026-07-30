@@ -732,19 +732,23 @@ h2 {
     font-size:16px;
 
     transition:.3s;
-
 }
-
 #buscador-productos:focus{
-
     outline:none;
-
     border-color:#8b3dff;
-
 }
-
 #buscador-productos::placeholder{
-
     color:#9a9a9a;
-
+}
+.no-results{
+    display:none;
+    text-align:center;
+    margin:50px auto;
+}
+.no-results h2{
+    margin-bottom:10px;
+    font-size:28px;
+}
+.no-results p{
+    opacity:.7;
 }
