@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Administrador | AR Factory</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<h1>Panel de Administración</h1>
+
+<div class="dashboard">
+
+    <a href="productos.html" class="card">
+
+        📦
+
+        <h2>Productos</h2>
+
+    </a>
+
+    <a href="#" class="card">
+
+        🛒
+
+        <h2>Pedidos</h2>
+
+    </a>
+
+    <a href="#" class="card">
+
+        👥
+
+        <h2>Clientes</h2>
+
+    </a>
+
+    <a href="#" class="card">
+
+        📈
+
+        <h2>Estadísticas</h2>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
