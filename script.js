@@ -33,6 +33,19 @@ productos.forEach(producto => {
       <p>
         ${producto.descripcion}
       </p>
+      <p class="product-price">
+  ${producto.precio.toFixed(2)} €
+</p>
+
+<p class="product-stock">
+  ${
+    producto.stock > 10
+      ? `🟢 En stock (${producto.stock} uds.)`
+      : producto.stock > 0
+      ? `🟡 Quedan solo ${producto.stock} uds.`
+      : `🔴 Agotado`
+  }
+</p>
       <div class="product-details">
         ${producto.detalles.map(detalle => `
           <span>
