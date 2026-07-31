@@ -855,3 +855,22 @@ h2 {
 }
 
 }
+.product-price{
+
+    margin-top:15px;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+}
+
+.product-stock{
+
+    margin:8px 0 18px;
+
+    font-size:.9rem;
+
+    color:#cfcfcf;
+}
