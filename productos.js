@@ -84,7 +84,7 @@ categoriaNombre: "ACCESSORIES",
     {
     id: 4,
     nombre: "Intermitentes SuperMotard",
-    precio: 14,99,
+    precio: 14.99,
     imagenes: [
       "images/Organizador-de-cables.png"
     ],
@@ -115,7 +115,7 @@ categoriaNombre: "ACCESSORIES",
     {
     id: 5,
     nombre: "Conducto Aire Freno Delantero",
-    precio: 24,99,
+    precio: 24.99,
     imagenes: [
       "images/Organizador-de-cables.png"
     ],
