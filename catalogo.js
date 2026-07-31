@@ -103,11 +103,15 @@ function mostrarProductos() {
 
                 </p>
 
-                <p class="product-price">
-
-                    ${producto.precio.toFixed(2)} €
-
-                </p>
+              <p class="product-stock">
+    ${
+        producto.stock > 5
+        ? `🟢 En stock (${producto.stock} uds.)`
+        : producto.stock > 0
+        ? `🟡 Quedan solo ${producto.stock} uds.`
+        : `🔴 Agotado`
+    }
+</p>
 
                 <a
                     href="producto.html?id=${producto.id}"
