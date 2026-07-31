@@ -4,6 +4,7 @@ const productos = [
     id: 1,
     nombre: "AR BRAKE DUCT",
     precio: 39.99,
+    stock:18,
     imagenes: [
       "images/ar-brake-duct.png"
     ],
@@ -29,6 +30,7 @@ categoriaNombre: "BRAKE PERFORMANCE",
     id: 2,
     nombre: "AR LEVER GUARD",
     precio: 49.99,
+    stock:25,
     imagenes: [
       "images/ar-brake-duct.png"
     ],
@@ -54,6 +56,7 @@ categoriaNombre: "PROTECTION",
     id: 3,
     nombre: "Organizador cables",
     precio: 7.99,
+    stock:18,
     imagenes: [
       "images/Organizador-de-cables.png"
     ],
@@ -85,6 +88,7 @@ categoriaNombre: "ACCESSORIES",
     id: 4,
     nombre: "Intermitentes SuperMotard",
     precio: 14.99,
+    stock:18,
     imagenes: [
       "images/Organizador-de-cables.png"
     ],
@@ -116,6 +120,7 @@ categoriaNombre: "ACCESSORIES",
     id: 5,
     nombre: "Conducto Aire Freno Delantero",
     precio: 24.99,
+    stock:12,
     imagenes: [
       "images/Organizador-de-cables.png"
     ],
